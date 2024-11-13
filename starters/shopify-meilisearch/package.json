@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
+    "dev": "node init && next dev --turbopack",
+    "build": "node init && next build",
+    "start": "node init && next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "prettier": "prettier --check \"**/*.{js,jsx,ts,tsx}\"",
@@ -20,7 +20,7 @@
     "codegen": "graphql-codegen && graphql-codegen -p admin",
     "coupling-graph": "npx madge --extensions js,jsx,ts,tsx,css,md,mdx ./ --exclude '.next|tailwind.config.js|reset.d.ts|prettier.config.js|postcss.config.js|playwright.config.ts|next.config.js|next-env.d.ts|instrumentation.ts|e2e/|README.md|eslintrc.js' --image graph.svg",
     "sync": "yarn build:scripts && node scripts/dist/sync.mjs",
-    "build:scripts": "rimraf scripts/dist && tsup scripts/ -d scripts/dist"
+    "build:scripts": "node init && rimraf scripts/dist && tsup scripts/ -d scripts/dist"
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.16",
